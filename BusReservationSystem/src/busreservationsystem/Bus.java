@@ -7,7 +7,7 @@ import java.util.*;
 public class Bus extends UnicastRemoteObject implements BusInterface{
     public static ArrayList<Bus> allBuses = new ArrayList<Bus>();
     //private HashMap<Integer,Boolean> seats = new HashMap<Integer,Boolean>();
-    private ArrayList<Integer> seatNumber = new ArrayList<Integer>();
+    private ArrayList<Integer> seatNumber = new ArrayList<Integer>(); //"6.true"
     private ArrayList<Boolean> seatUnavailable = new ArrayList<Boolean>();
     private BusDriver busDriver;
     private int busID;

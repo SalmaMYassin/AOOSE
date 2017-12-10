@@ -19,14 +19,19 @@ public class Route extends UnicastRemoteObject implements RouteInterface{
     public Route() throws RemoteException{
     }
 
-    public Route(String routeName, String departingFrom, String arrivingTo) throws RemoteException {
+    public Route(int busID, String routeName, String departingFrom, String arrivingTo) throws RemoteException {
         this.routeID = ConnectToDB.GetRouteID() + 1;
         this.routeName = routeName;
         this.departingFrom = departingFrom;
         this.arrivingTo = arrivingTo;
         
+        buses.add(ConnectToDB.GetBus(busID));
+        
         Bus temp = new Bus();
-        this.buses.add(temp);
+        for(int i = 1; i < 4; i++)
+            this.buses.add(temp);
+        
+        ConnectToDB.insertRecord(this, "Route");
     }
     
     /***********

@@ -28,7 +28,6 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
     private void initComponents() {
 
         busDriverNameLabelLeftTop = new javax.swing.JLabel();
-        routeLabel = new javax.swing.JLabel();
         busDriverComboBox = new javax.swing.JComboBox<>();
         driverNameLabel = new javax.swing.JLabel();
         dnLabel = new javax.swing.JLabel();
@@ -36,15 +35,11 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
         drLabel = new javax.swing.JLabel();
         addBusButton = new javax.swing.JToggleButton();
         cancelButton = new javax.swing.JToggleButton();
-        routeComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         busDriverNameLabelLeftTop.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         busDriverNameLabelLeftTop.setText("Bus Driver ID:");
-
-        routeLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        routeLabel.setText("Route:");
 
         busDriverComboBox.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         busDriverComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
@@ -70,9 +65,6 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
         cancelButton.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         cancelButton.setText("Cancel");
 
-        routeComboBox.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        routeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,17 +78,14 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
                         .addComponent(addBusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(routeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(busDriverNameLabelLeftTop, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dnLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(drLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(driverRatingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(driverNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(busDriverComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(routeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(driverRatingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(driverNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(busDriverComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(177, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,14 +103,7 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(driverRatingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drLabel))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(routeLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(routeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBusButton)
                     .addComponent(cancelButton))
@@ -180,7 +162,5 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
     private javax.swing.JLabel drLabel;
     private javax.swing.JLabel driverNameLabel;
     private javax.swing.JLabel driverRatingLabel;
-    private javax.swing.JComboBox<String> routeComboBox;
-    private javax.swing.JLabel routeLabel;
     // End of variables declaration//GEN-END:variables
 }

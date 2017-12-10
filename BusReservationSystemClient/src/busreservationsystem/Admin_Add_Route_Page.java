@@ -5,6 +5,10 @@
  */
 package busreservationsystem;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Roofie6
@@ -16,6 +20,34 @@ public class Admin_Add_Route_Page extends javax.swing.JFrame {
      */
     public Admin_Add_Route_Page() {
         initComponents();
+    }
+
+    public void setBusNumberComboBox(JComboBox<String> busNumberComboBox) {
+        this.busNumberComboBox = busNumberComboBox;
+    }
+
+    public JToggleButton getAddRouteButton() {
+        return addRouteButton;
+    }
+
+    public JTextField getArrivingTextField() {
+        return arrivingTextField;
+    }
+
+    public JComboBox<String> getBusNumberComboBox() {
+        return busNumberComboBox;
+    }
+
+    public JToggleButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public JTextField getDepartingTextField() {
+        return departingTextField;
+    }
+
+    public JTextField getRouteNameTextField() {
+        return routeNameTextField;
     }
 
     /**

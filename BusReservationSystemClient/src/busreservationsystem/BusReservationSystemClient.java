@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -43,8 +44,11 @@ public class BusReservationSystemClient {
             loginGUI.getLoginButton().addActionListener(new LoginButtonListener());
             loginGUI.getRegisterButton().addActionListener(new RegisterPageButtonListener());
             
-            abd.getAddButton().addActionListener(new AddaDriverButtonListener());
+            abd.getAddButton().addActionListener(new AddDriverButtonListener());
             abd.getCancelButton().addActionListener(new ReturnToAdminHomePageButtonListener());
+            
+            arp.getAddRouteButton().addActionListener(new AddNewRouteButtonListener());
+            arp.getCancelButton().addActionListener(new ReturnToAdminHomePageButtonListener());
             
             ah.getAddBusButton().addActionListener(new AddBusButtonListener());
             ah.getBrowseRoutesButton().addActionListener(new BrowseRouteButtonListener());
@@ -59,12 +63,36 @@ public class BusReservationSystemClient {
             ch.getBookRideButton().addActionListener(new BookRideButtonListener());
             ch.getLogoutButton().addActionListener(new LogoutButtonListener());
             
+            
+            
+            ArrayList<Integer> busArr = new ArrayList<>();
+            busArr = ConnectToDB.GetBusID();
+            for(int i = 0; i < busArr.size(); i++){
+                arp.getBusNumberComboBox().addItem(String.valueOf(busArr.get(i)));
+            }
         } catch (Exception ex) {
             System.out.println("Exception occured");
         }
     }
     
-    static class AddaDriverButtonListener implements ActionListener {
+    static class AddNewRouteButtonListener implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int busID = Integer.parseInt(String.valueOf(arp.getBusNumberComboBox().getSelectedItem()));
+            String routeName = arp.getRouteNameTextField().getText();
+            String departing = arp.getDepartingTextField().getText();
+            String arriving = arp.getArrivingTextField().getText();
+            
+            try {
+                Route temp = new Route(busID, routeName, departing, arriving);
+            } catch (RemoteException ex) {
+                System.out.println("Error");
+            }
+        }
+    }
+    
+    static class AddDriverButtonListener implements ActionListener {
         
         @Override
         public void actionPerformed(ActionEvent e) {

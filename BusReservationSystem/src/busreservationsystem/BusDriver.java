@@ -8,7 +8,6 @@ public class BusDriver extends UnicastRemoteObject implements BusDriverInterface
     public static ArrayList<BusDriver> allDrivers = new ArrayList<BusDriver>();
 
     private int driverID;
-    private static int driverIDCounter = 0;
     private int driverRatingCount;
     private float driverRateAvg;
 
@@ -18,7 +17,6 @@ public class BusDriver extends UnicastRemoteObject implements BusDriverInterface
     * Constructors *
     ***************/
     public BusDriver() throws RemoteException {
-        driverIDCounter++;
         this.driverID = ConnectToDB.GetBusDriverID() + 1;
         this.driverRatingCount = 0;
         this.driverRateAvg = 5;
@@ -26,11 +24,16 @@ public class BusDriver extends UnicastRemoteObject implements BusDriverInterface
     }
     
     public BusDriver(String driverName) throws RemoteException {
-        driverIDCounter++;
         this.driverID = ConnectToDB.GetBusDriverID() + 1;
         this.driverName = driverName;
         this.driverRateAvg = 5;
         ConnectToDB.insertRecord(this, "BusDriver");
+    }
+    
+    public BusDriver(int ID, String driverName, float driverAvg) throws RemoteException {
+        this.driverID = ID;
+        this.driverName = driverName;
+        this.driverRateAvg = driverAvg;
     }
     
     /***********

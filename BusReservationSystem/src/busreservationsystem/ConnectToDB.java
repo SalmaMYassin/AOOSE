@@ -3,10 +3,16 @@
  * Project - Final Phase                         *
  * Group 12                                      *
  *********************************************** */
+
+/*
+* use next() function only once in the hasnext() while loop okay okay
+* Shout out for Salma Raouf myself sarah and mr hamankas
+*/
 package busreservationsystem;
 
 import com.mongodb.*;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public class ConnectToDB {
 
@@ -58,7 +64,7 @@ public class ConnectToDB {
                 tempSeats[i] = (i + 1) + "/" + String.valueOf(B.getSeatUnavailable().get(i + 1));
             }
             bus = new BasicDBObject("Bus_ID", B.getBusID())
-                    .append("Bus_Driver", B.getBusDriver().getDriverName())
+                    .append("Bus_Driver", B.getBusDriver().getDriverID())
                     .append("Seat_Number_Availability", tempSeats);
             collectionBus.insert(bus);
         } else if (collectionName.equals("BusDriver")) {
@@ -147,6 +153,82 @@ public class ConnectToDB {
             cursor.close();
         }
         return driverID;
+    }
+    
+    public static ArrayList<Integer> GetBusID() throws RemoteException {
+        ArrayList<Integer> busID = new ArrayList<Integer>();
+        
+        DBCursor cursor = collectionBus.find();
+        try {
+            while (cursor.hasNext()) {
+                busID.add(Integer.parseInt(String.valueOf(cursor.next().get("Bus_ID"))));
+            }
+        } finally {
+            cursor.close();
+        }
+        return busID;
+    }
+    
+    public static Bus GetBus(int busID) throws RemoteException{ //leave out shit in here even if we aint gonna use it till we are done with the whole entire damn project
+        Bus bus = new Bus();
+        int id = 0;
+        int searchBD = 0;
+        BusDriver bd = new BusDriver();
+        
+        BasicDBObject searchQuery = new BasicDBObject("Bus_ID", busID);
+
+            DBCursor cursor = collectionBus.find(searchQuery);
+            DBObject temp = null;
+            try {
+                while (cursor.hasNext()) {
+                    temp = cursor.next();
+                }
+                id = Integer.parseInt(String.valueOf(temp.get("Bus_ID")));
+                searchBD = Integer.parseInt(String.valueOf(temp.get("Bus_Driver")));
+                bd = GetBusDriver(searchBD);
+                bus = new Bus(bd, id);
+            } finally {
+                cursor.close();
+            }
+        
+        return bus;
+    }
+    
+     public static BusDriver GetBusDriver(int busDriverID) throws RemoteException{
+        BusDriver busDriver = new BusDriver();
+        
+        int id = 0;
+        String name = "";
+        float avg = 0;
+        
+        BasicDBObject searchQuery = new BasicDBObject("Driver_ID", busDriverID);
+
+            DBCursor cursor = collectionBusDriver.find(searchQuery);
+            try {
+                while (cursor.hasNext()) {
+                    id = Integer.parseInt(String.valueOf(cursor.next().get("Driver_ID")));
+                    name = String.valueOf(cursor.next().get("Driver_Name"));
+                    avg = 5;//Float.parseFloat(String.valueOf(cursor.next().get("Driver_Rating")));
+                }
+                busDriver = new BusDriver(id, name, avg);
+            } finally {
+                cursor.close();
+            }
+        return busDriver;
+    }
+    
+    public static int GetTotalBusIDs() throws RemoteException {
+        int totalBusID = 0;
+        
+        DBCursor cursor = collectionBus.find();
+        try {
+            while (cursor.hasNext()) {
+                totalBusID++;
+            }
+        } finally {
+            cursor.close();
+        }
+        return totalBusID;
     }
     
     public static int GetRouteID() throws RemoteException {
