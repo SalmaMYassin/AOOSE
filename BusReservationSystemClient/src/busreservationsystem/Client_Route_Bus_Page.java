@@ -5,6 +5,11 @@
  */
 package busreservationsystem;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Ali
@@ -18,6 +23,76 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JToggleButton getBackButton() {
+        return backButton;
+    }
+
+    public JLabel getArrivingLabel() {
+        return arrivingLabel;
+    }
+
+    public void setArrivingLabel(JLabel arrivingLabel) {
+        this.arrivingLabel = arrivingLabel;
+    }
+
+    public JButton getBusButton_1() {
+        return busButton_1;
+    }
+
+    public void setBusButton_1(JButton busButton_1) {
+        this.busButton_1 = busButton_1;
+    }
+
+    public JButton getBusButton_2() {
+        return busButton_2;
+    }
+
+    public void setBusButton_2(JButton busButton_2) {
+        this.busButton_2 = busButton_2;
+    }
+
+    public JButton getBusButton_3() {
+        return busButton_3;
+    }
+
+    public void setBusButton_3(JButton busButton_3) {
+        this.busButton_3 = busButton_3;
+    }
+
+    public JButton getBusButton_4() {
+        return busButton_4;
+    }
+
+    public void setBusButton_4(JButton busButton_4) {
+        this.busButton_4 = busButton_4;
+    }
+
+    public JLabel getDepartingLabel() {
+        return departingLabel;
+    }
+
+    public void setDepartingLabel(JLabel departingLabel) {
+        this.departingLabel = departingLabel;
+    }
+
+    public JComboBox<String> getRouteIDComboBox() {
+        return routeIDComboBox;
+    }
+
+    public void setRouteIDComboBox(JComboBox<String> routeIDComboBox) {
+        this.routeIDComboBox = routeIDComboBox;
+    }
+
+    public JLabel getRouteNameLabel() {
+        return routeNameLabel;
+    }
+
+    public void setRouteNameLabel(JLabel routeNameLabel) {
+        this.routeNameLabel = routeNameLabel;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,6 +104,7 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        backButton = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         routeNameLabel = new javax.swing.JLabel();
         departingLabel = new javax.swing.JLabel();
@@ -41,6 +117,8 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
         busButton_4 = new javax.swing.JButton();
         routeMapImageLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        routeIDComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +129,8 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Route Info");
 
+        backButton.setText("Back");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -58,7 +138,8 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(371, 371, 371)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,22 +147,22 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(backButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel2.setText("Route Name:");
+        jLabel2.setText("Route Number:");
 
         routeNameLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        routeNameLabel.setText("---");
 
         departingLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        departingLabel.setText("---");
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel7.setText("Departing From:");
 
         arrivingLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        arrivingLabel.setText("---");
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel9.setText("Arriving To:");
@@ -119,39 +200,39 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
         });
 
         routeMapImageLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        routeMapImageLabel.setText("ROUTE_MAP_IMAGE");
+        routeMapImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ali\\Desktop\\Bus_Route.png")); // NOI18N
         routeMapImageLabel.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel3.setText("Buses");
+
+        routeIDComboBox.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        routeIDComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                routeIDComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel4.setText("Route Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2))
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(routeNameLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(arrivingLabel)
-                            .addComponent(departingLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addComponent(routeIDComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(departingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(arrivingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(routeNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -166,32 +247,24 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(160, 160, 160))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(routeNameLabel)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(departingLabel))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(arrivingLabel)))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -201,10 +274,26 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(busButton_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(busButton_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                                .addComponent(busButton_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(routeIDComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(routeNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(departingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(arrivingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -225,6 +314,10 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
     private void busButton_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_busButton_3ActionPerformed
+
+    private void routeIDComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routeIDComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routeIDComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,8 +385,11 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
         });
     }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel arrivingLabel;
+    private javax.swing.JToggleButton backButton;
     private javax.swing.JButton busButton_1;
     private javax.swing.JButton busButton_2;
     private javax.swing.JButton busButton_3;
@@ -302,9 +398,11 @@ public class Client_Route_Bus_Page extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> routeIDComboBox;
     private javax.swing.JLabel routeMapImageLabel;
     private javax.swing.JLabel routeNameLabel;
     // End of variables declaration//GEN-END:variables

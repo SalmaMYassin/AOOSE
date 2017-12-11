@@ -3,6 +3,8 @@ package busreservationsystem;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Route extends UnicastRemoteObject implements RouteInterface{
     public static ArrayList<Route> allRoutes = new ArrayList<Route>();
@@ -17,6 +19,7 @@ public class Route extends UnicastRemoteObject implements RouteInterface{
     * Constructors *
     ***************/
     public Route() throws RemoteException{
+    
     }
 
     public Route(int busID, String routeName, String departingFrom, String arrivingTo) throws RemoteException {
@@ -32,6 +35,19 @@ public class Route extends UnicastRemoteObject implements RouteInterface{
             this.buses.add(temp);
         
         ConnectToDB.insertRecord(this, "Route");
+    }
+    
+    public Route(ArrayList<Bus> b, String routeName, String departingFrom, String arrivingTo) throws RemoteException{
+        try {
+            this.routeID = ConnectToDB.GetRouteID() + 1;
+        } catch (RemoteException ex) {
+            Logger.getLogger(Route.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.routeName = routeName;
+        this.departingFrom = departingFrom;
+        this.arrivingTo = arrivingTo;
+        buses = b;
+        
     }
     
     /***********

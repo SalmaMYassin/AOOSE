@@ -140,6 +140,21 @@ public class ConnectToDB {
         }
         return false;
     }
+    
+        public static int GetBusIDConstructor() throws RemoteException {
+        int busID = 1;
+        
+        DBCursor cursor = collectionBus.find();
+        try {
+            while (cursor.hasNext()) {
+                busID = Integer.parseInt(String.valueOf(cursor.next().get("Bus_ID")));
+            }
+        } finally {
+            cursor.close();
+        }
+            System.out.println(busID + " LOOK AT ME ");
+            return busID;
+    }
 
     public static int GetBusDriverID() throws RemoteException {
         int driverID = 0;
@@ -153,6 +168,34 @@ public class ConnectToDB {
             cursor.close();
         }
         return driverID;
+    }
+    
+    public static ArrayList<Integer> GetBusDriverIDForBus() throws RemoteException {
+        ArrayList<Integer> busDriverID = new ArrayList<Integer>();
+        
+        DBCursor cursor = collectionBusDriver.find();
+        try {
+            while (cursor.hasNext()) {
+                busDriverID.add(Integer.parseInt(String.valueOf(cursor.next().get("Driver_ID"))));
+            }
+        } finally {
+            cursor.close();
+        }
+        return busDriverID;
+    }
+    
+    public static ArrayList<Integer> GetRouteIDSomething() throws RemoteException {
+        ArrayList<Integer> routeID = new ArrayList<Integer>();
+        
+        DBCursor cursor = collectionRoute.find();
+        try {
+            while (cursor.hasNext()) {
+                routeID.add(Integer.parseInt(String.valueOf(cursor.next().get("Route_ID"))));
+            }
+        } finally {
+            cursor.close();
+        }
+        return routeID;
     }
     
     public static ArrayList<Integer> GetBusID() throws RemoteException {
@@ -169,7 +212,7 @@ public class ConnectToDB {
         return busID;
     }
     
-    public static Bus GetBus(int busID) throws RemoteException{ //leave out shit in here even if we aint gonna use it till we are done with the whole entire damn project
+    public static Bus GetBus(int busID) throws RemoteException{
         Bus bus = new Bus();
         int id = 0;
         int searchBD = 0;
@@ -204,19 +247,73 @@ public class ConnectToDB {
         BasicDBObject searchQuery = new BasicDBObject("Driver_ID", busDriverID);
 
             DBCursor cursor = collectionBusDriver.find(searchQuery);
+            DBObject temp = null;
+            
             try {
                 while (cursor.hasNext()) {
-                    id = Integer.parseInt(String.valueOf(cursor.next().get("Driver_ID")));
-                    name = String.valueOf(cursor.next().get("Driver_Name"));
-                    avg = 5;//Float.parseFloat(String.valueOf(cursor.next().get("Driver_Rating")));
+                    temp = cursor.next();
                 }
+                id = Integer.parseInt(String.valueOf(temp.get("Driver_ID")));
+                name = String.valueOf(temp.get("Driver_Name"));
+                avg = Float.parseFloat(String.valueOf(temp.get("Driver_Rating")));
                 busDriver = new BusDriver(id, name, avg);
+                
             } finally {
                 cursor.close();
             }
         return busDriver;
     }
     
+      public static Route GetRoute(int routeID) throws RemoteException{
+        Route route = new Route();
+            
+        String fourBuses;
+        String routeName;
+        String departingFrom;
+        String arrivingTo;
+        
+        BasicDBObject searchQuery = new BasicDBObject("Route_ID", routeID);
+            DBCursor cursor = collectionRoute.find(searchQuery);
+            DBObject temp = null;    
+            
+            try {
+                while (cursor.hasNext()) {
+                     temp = cursor.next();
+  
+                }
+                
+                fourBuses = String.valueOf(temp.get("Buses"));
+                routeName = String.valueOf(temp.get("Route_Name"));
+                departingFrom = String.valueOf(temp.get("Departed_From"));
+                String id = String.valueOf(temp.get("Route_ID"));
+                
+                arrivingTo = String.valueOf(temp.get("Arriving_To"));
+                
+                ArrayList<Bus> tempBusesArr = new ArrayList<Bus>();
+                
+                String[] tempBusesID = fourBuses.split("/");
+                
+                
+                Bus tempBus = new Bus();
+                
+                for(int i = 0; i < tempBusesID.length; i++){
+                    
+                    
+                    if(tempBus.getBusID() != 0){
+                        tempBus = ConnectToDB.GetBus(Integer.parseInt(tempBusesID[i]));
+                        tempBusesArr.add(i, tempBus);
+                        //tempBusesArr.add(tempBus);
+                    }
+                }
+                System.out.println(tempBusesArr.size() + "that is a zeroo");
+                route = new Route(tempBusesArr, routeName, departingFrom, arrivingTo);
+                
+            } finally {
+                cursor.close();
+            }
+        return route;
+    }
+     
     public static int GetTotalBusIDs() throws RemoteException {
         int totalBusID = 0;
         

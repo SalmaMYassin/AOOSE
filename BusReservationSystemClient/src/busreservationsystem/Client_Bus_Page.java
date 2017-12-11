@@ -5,6 +5,9 @@
  */
 package busreservationsystem;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Ali
@@ -18,6 +21,58 @@ public class Client_Bus_Page extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JLabel getBusIdLabel() {
+        return busIdLabel;
+    }
+
+    public JLabel getDriverNameLabel() {
+        return driverNameLabel;
+    }
+
+    public JLabel getRouteNameLabel() {
+        return routeNameLabel;
+    }
+
+    public JButton getSeatButton1() {
+        return seatButton1;
+    }
+
+    public JButton getSeatButton10() {
+        return seatButton10;
+    }
+
+    public JButton getSeatButton11() {
+        return seatButton11;
+    }
+
+    public JButton getSeatButton2() {
+        return seatButton2;
+    }
+
+    public JButton getSeatButton3() {
+        return seatButton3;
+    }
+
+    public JButton getSeatButton4() {
+        return seatButton4;
+    }
+
+    public JButton getSeatButton5() {
+        return seatButton5;
+    }
+
+    public JButton getSeatButton6() {
+        return seatButton6;
+    }
+
+    public JButton getSeatButton7() {
+        return seatButton7;
+    }
+
+    public JButton getSeatButton8() {
+        return seatButton8;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,18 +84,39 @@ public class Client_Bus_Page extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        backButton = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
+        busIdLabel = new javax.swing.JLabel();
         routeNameLabel = new javax.swing.JLabel();
-        departingLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        arrivingLabel = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        busButton_1 = new javax.swing.JButton();
-        busButton_3 = new javax.swing.JButton();
-        busButton_2 = new javax.swing.JButton();
-        busButton_4 = new javax.swing.JButton();
-        routeMapImageLabel = new javax.swing.JLabel();
+        seatButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        seatButton5 = new javax.swing.JButton();
+        seatButton9 = new javax.swing.JButton();
+        seatButton2 = new javax.swing.JButton();
+        seatButton6 = new javax.swing.JButton();
+        seatButton3 = new javax.swing.JButton();
+        seatButton10 = new javax.swing.JButton();
+        seatButton4 = new javax.swing.JButton();
+        seatButton7 = new javax.swing.JButton();
+        seatButton8 = new javax.swing.JButton();
+        seatButton11 = new javax.swing.JButton();
+        seatButton12 = new javax.swing.JButton();
+        seatButton13 = new javax.swing.JButton();
+        busButton_17 = new javax.swing.JButton();
+        busButton_18 = new javax.swing.JButton();
+        busButton_19 = new javax.swing.JButton();
+        busButton_20 = new javax.swing.JButton();
+        busButton_21 = new javax.swing.JButton();
+        busButton_22 = new javax.swing.JButton();
+        busButton_23 = new javax.swing.JButton();
+        busButton_24 = new javax.swing.JButton();
+        busButton_25 = new javax.swing.JButton();
+        busButton_26 = new javax.swing.JButton();
+        busButton_27 = new javax.swing.JButton();
+        busButton_28 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        driverNameLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +125,9 @@ public class Client_Bus_Page extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Route Info");
+        jLabel1.setText("Bus Info");
+
+        backButton.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -58,7 +136,8 @@ public class Client_Bus_Page extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(371, 371, 371)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,106 +145,311 @@ public class Client_Bus_Page extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(backButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel2.setText("Route Name:");
+        jLabel2.setText("Bus ID:");
+
+        busIdLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        busIdLabel.setText("---");
 
         routeNameLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         routeNameLabel.setText("---");
 
-        departingLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        departingLabel.setText("---");
-
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel7.setText("Departing From:");
+        jLabel7.setText("Route Name:");
 
-        arrivingLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        arrivingLabel.setText("---");
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel9.setText("Arriving To:");
-
-        busButton_1.setText("BUS_ID");
-        busButton_1.setPreferredSize(new java.awt.Dimension(120, 120));
-        busButton_1.addActionListener(new java.awt.event.ActionListener() {
+        seatButton1.setText("BUS_ID");
+        seatButton1.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busButton_1ActionPerformed(evt);
+                seatButton1ActionPerformed(evt);
             }
         });
-
-        busButton_3.setText("BUS_ID");
-        busButton_3.setPreferredSize(new java.awt.Dimension(120, 120));
-        busButton_3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busButton_3ActionPerformed(evt);
-            }
-        });
-
-        busButton_2.setText("BUS_ID");
-        busButton_2.setPreferredSize(new java.awt.Dimension(120, 120));
-        busButton_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busButton_2ActionPerformed(evt);
-            }
-        });
-
-        busButton_4.setText("BUS_ID");
-        busButton_4.setPreferredSize(new java.awt.Dimension(120, 120));
-        busButton_4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busButton_4ActionPerformed(evt);
-            }
-        });
-
-        routeMapImageLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        routeMapImageLabel.setText("ROUTE_MAP_IMAGE");
-        routeMapImageLabel.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel3.setText("Buses");
+        jLabel3.setText("Seat Map");
+
+        seatButton5.setText("BUS_ID");
+        seatButton5.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton5ActionPerformed(evt);
+            }
+        });
+
+        seatButton9.setText("BUS_ID");
+        seatButton9.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton9ActionPerformed(evt);
+            }
+        });
+
+        seatButton2.setText("BUS_ID");
+        seatButton2.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton2ActionPerformed(evt);
+            }
+        });
+
+        seatButton6.setText("BUS_ID");
+        seatButton6.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton6ActionPerformed(evt);
+            }
+        });
+
+        seatButton3.setText("BUS_ID");
+        seatButton3.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton3ActionPerformed(evt);
+            }
+        });
+
+        seatButton10.setText("BUS_ID");
+        seatButton10.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton10ActionPerformed(evt);
+            }
+        });
+
+        seatButton4.setText("BUS_ID");
+        seatButton4.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton4ActionPerformed(evt);
+            }
+        });
+
+        seatButton7.setText("BUS_ID");
+        seatButton7.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton7ActionPerformed(evt);
+            }
+        });
+
+        seatButton8.setText("BUS_ID");
+        seatButton8.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton8ActionPerformed(evt);
+            }
+        });
+
+        seatButton11.setText("BUS_ID");
+        seatButton11.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton11ActionPerformed(evt);
+            }
+        });
+
+        seatButton12.setText("BUS_ID");
+        seatButton12.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton12ActionPerformed(evt);
+            }
+        });
+
+        seatButton13.setText("BUS_ID");
+        seatButton13.setPreferredSize(new java.awt.Dimension(120, 120));
+        seatButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatButton13ActionPerformed(evt);
+            }
+        });
+
+        busButton_17.setText("BUS_ID");
+        busButton_17.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_17ActionPerformed(evt);
+            }
+        });
+
+        busButton_18.setText("BUS_ID");
+        busButton_18.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_18ActionPerformed(evt);
+            }
+        });
+
+        busButton_19.setText("BUS_ID");
+        busButton_19.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_19ActionPerformed(evt);
+            }
+        });
+
+        busButton_20.setText("BUS_ID");
+        busButton_20.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_20ActionPerformed(evt);
+            }
+        });
+
+        busButton_21.setText("BUS_ID");
+        busButton_21.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_21ActionPerformed(evt);
+            }
+        });
+
+        busButton_22.setText("BUS_ID");
+        busButton_22.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_22ActionPerformed(evt);
+            }
+        });
+
+        busButton_23.setText("BUS_ID");
+        busButton_23.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_23ActionPerformed(evt);
+            }
+        });
+
+        busButton_24.setText("BUS_ID");
+        busButton_24.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_24ActionPerformed(evt);
+            }
+        });
+
+        busButton_25.setText("BUS_ID");
+        busButton_25.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_25ActionPerformed(evt);
+            }
+        });
+
+        busButton_26.setText("BUS_ID");
+        busButton_26.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_26ActionPerformed(evt);
+            }
+        });
+
+        busButton_27.setText("BUS_ID");
+        busButton_27.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_27ActionPerformed(evt);
+            }
+        });
+
+        busButton_28.setText("BUS_ID");
+        busButton_28.setPreferredSize(new java.awt.Dimension(120, 120));
+        busButton_28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busButton_28ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel8.setText("Driver Name:");
+
+        driverNameLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        driverNameLabel.setText("---");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(busIdLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(87, 87, 87)
                         .addComponent(routeNameLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(arrivingLabel)
-                            .addComponent(departingLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(driverNameLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(busButton_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(busButton_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(busButton_17, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_18, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(busButton_19, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_20, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(busButton_21, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(busButton_25, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(seatButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(seatButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(busButton_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(busButton_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(busButton_23, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_24, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_28, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(busButton_26, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_27, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(busButton_22, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(seatButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(seatButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(seatButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(seatButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(seatButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(seatButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(160, 160, 160))))
+                        .addGap(154, 154, 154))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,54 +461,178 @@ public class Client_Bus_Page extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(routeNameLabel)))
+                            .addComponent(busIdLabel)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(departingLabel))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(arrivingLabel)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(busButton_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(busButton_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(seatButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(seatButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(13, 13, 13)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(seatButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(seatButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(busButton_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(busButton_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(routeMapImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(driverNameLabel))
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(routeNameLabel))))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(busButton_27, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(busButton_23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_26, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(busButton_24, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_22, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seatButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seatButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seatButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seatButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seatButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seatButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(busButton_17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(busButton_18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(busButton_25, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void busButton_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_4ActionPerformed
+    private void seatButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busButton_4ActionPerformed
+    }//GEN-LAST:event_seatButton1ActionPerformed
 
-    private void busButton_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_2ActionPerformed
+    private void seatButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busButton_2ActionPerformed
+    }//GEN-LAST:event_seatButton5ActionPerformed
 
-    private void busButton_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_1ActionPerformed
+    private void seatButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busButton_1ActionPerformed
+    }//GEN-LAST:event_seatButton9ActionPerformed
 
-    private void busButton_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_3ActionPerformed
+    private void seatButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busButton_3ActionPerformed
+    }//GEN-LAST:event_seatButton2ActionPerformed
+
+    private void seatButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton6ActionPerformed
+
+    private void seatButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton3ActionPerformed
+
+    private void seatButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton10ActionPerformed
+
+    private void seatButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton4ActionPerformed
+
+    private void seatButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton7ActionPerformed
+
+    private void seatButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton8ActionPerformed
+
+    private void seatButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton11ActionPerformed
+
+    private void seatButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton12ActionPerformed
+
+    private void seatButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seatButton13ActionPerformed
+
+    private void busButton_17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_17ActionPerformed
+
+    private void busButton_18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_18ActionPerformed
+
+    private void busButton_19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_19ActionPerformed
+
+    private void busButton_20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_20ActionPerformed
+
+    private void busButton_21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_21ActionPerformed
+
+    private void busButton_22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_22ActionPerformed
+
+    private void busButton_23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_23ActionPerformed
+
+    private void busButton_24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_24ActionPerformed
+
+    private void busButton_25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_25ActionPerformed
+
+    private void busButton_26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_26ActionPerformed
+
+    private void busButton_27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_27ActionPerformed
+
+    private void busButton_28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busButton_28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busButton_28ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,19 +685,40 @@ public class Client_Bus_Page extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel arrivingLabel;
-    private javax.swing.JButton busButton_1;
-    private javax.swing.JButton busButton_2;
-    private javax.swing.JButton busButton_3;
-    private javax.swing.JButton busButton_4;
-    private javax.swing.JLabel departingLabel;
+    private javax.swing.JToggleButton backButton;
+    private javax.swing.JButton busButton_17;
+    private javax.swing.JButton busButton_18;
+    private javax.swing.JButton busButton_19;
+    private javax.swing.JButton busButton_20;
+    private javax.swing.JButton busButton_21;
+    private javax.swing.JButton busButton_22;
+    private javax.swing.JButton busButton_23;
+    private javax.swing.JButton busButton_24;
+    private javax.swing.JButton busButton_25;
+    private javax.swing.JButton busButton_26;
+    private javax.swing.JButton busButton_27;
+    private javax.swing.JButton busButton_28;
+    private javax.swing.JLabel busIdLabel;
+    private javax.swing.JLabel driverNameLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel routeMapImageLabel;
     private javax.swing.JLabel routeNameLabel;
+    private javax.swing.JButton seatButton1;
+    private javax.swing.JButton seatButton10;
+    private javax.swing.JButton seatButton11;
+    private javax.swing.JButton seatButton12;
+    private javax.swing.JButton seatButton13;
+    private javax.swing.JButton seatButton2;
+    private javax.swing.JButton seatButton3;
+    private javax.swing.JButton seatButton4;
+    private javax.swing.JButton seatButton5;
+    private javax.swing.JButton seatButton6;
+    private javax.swing.JButton seatButton7;
+    private javax.swing.JButton seatButton8;
+    private javax.swing.JButton seatButton9;
     // End of variables declaration//GEN-END:variables
 }

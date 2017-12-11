@@ -73,7 +73,6 @@ public class Admin_Add_Route_Page extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         busNumberComboBox.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        busNumberComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
 
         busNumberLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         busNumberLabel.setText("Bus Number to Assign:");

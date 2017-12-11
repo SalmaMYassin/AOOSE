@@ -5,6 +5,10 @@
  */
 package busreservationsystem;
 
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Roofie6
@@ -18,6 +22,38 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JComboBox<String> getBusDriverComboBox() {
+        return busDriverComboBox;
+    }
+
+    public void setBusDriverComboBox(JComboBox<String> busDriverComboBox) {
+        this.busDriverComboBox = busDriverComboBox;
+    }
+
+    public JToggleButton getAddBusButton() {
+        return addBusButton;
+    }
+
+    public JToggleButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public void setDriverNameLabel(JLabel driverNameLabel) {
+        this.driverNameLabel = driverNameLabel;
+    }
+
+    public void setDriverRatingLabel(JLabel driverRatingLabel) {
+        this.driverRatingLabel = driverRatingLabel;
+    }
+
+    public JLabel getDriverNameLabel() {
+        return driverNameLabel;
+    }
+
+    public JLabel getDriverRatingLabel() {
+        return driverRatingLabel;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +78,11 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
         busDriverNameLabelLeftTop.setText("Bus Driver ID:");
 
         busDriverComboBox.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        busDriverComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+        busDriverComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busDriverComboBoxActionPerformed(evt);
+            }
+        });
 
         driverNameLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
@@ -116,6 +156,10 @@ public class Admin_Add_Bus_Page extends javax.swing.JFrame {
     private void addBusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBusButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addBusButtonActionPerformed
+
+    private void busDriverComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busDriverComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busDriverComboBoxActionPerformed
 
     /**
      * @param args the command line arguments

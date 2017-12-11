@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Bus extends UnicastRemoteObject implements BusInterface{
     public static ArrayList<Bus> allBuses = new ArrayList<Bus>();
-    //private HashMap<Integer,Boolean> seats = new HashMap<Integer,Boolean>();
     private ArrayList<Integer> seatNumber = new ArrayList<Integer>(); //"6.true"
     private ArrayList<Boolean> seatUnavailable = new ArrayList<Boolean>();
     private BusDriver busDriver;
@@ -16,6 +15,17 @@ public class Bus extends UnicastRemoteObject implements BusInterface{
     * Constructors *
     ***************/
     public Bus()throws RemoteException{}
+    
+    public Bus(BusDriver busDriver)throws RemoteException {
+        this.busDriver = busDriver;
+        this.busID = ConnectToDB.GetBusIDConstructor() + 1;
+        
+        for(int i = 0; i < 25; i++){
+            this.seatNumber.add(i+1);
+            this.seatUnavailable.add(true);
+        }
+        ConnectToDB.insertRecord(this, "Bus");
+    }
     
     public Bus(BusDriver busDriver, int busID)throws RemoteException {
         this.busDriver = busDriver;
